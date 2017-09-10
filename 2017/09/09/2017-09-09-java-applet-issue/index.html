@@ -99,7 +99,7 @@
 <meta property="og:url" content="https://starraven.github.io/2017/09/09/2017-09-09-java-applet-issue/index.html">
 <meta property="og:site_name" content="Raven's Writing Desk">
 <meta property="og:description" content="这一阵子跑到匹大来念书了，忙了一个月也算安定下来了。有闲心重新打理这个博客了，希望有空的时候能补上几篇我整个出国过程的文章，也算可以帮助一些和我一样成绩不怎么好的同学吧。 　　这篇文章的起因主要是因为第一学期选了一门叫Interactive System Design的课，第一个作业是做一个about me的page我就不吐槽了。第二个作业竟然是用java applet来写东西。我第一眼看到这">
-<meta property="og:updated_time" content="2017-09-10T02:57:37.431Z">
+<meta property="og:updated_time" content="2017-09-10T03:46:44.412Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Java Applet过程中的一些问题">
 <meta name="twitter:description" content="这一阵子跑到匹大来念书了，忙了一个月也算安定下来了。有闲心重新打理这个博客了，希望有空的时候能补上几篇我整个出国过程的文章，也算可以帮助一些和我一样成绩不怎么好的同学吧。 　　这篇文章的起因主要是因为第一学期选了一门叫Interactive System Design的课，第一个作业是做一个about me的page我就不吐槽了。第二个作业竟然是用java applet来写东西。我第一眼看到这">
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  869
+                  985
                 </span>
               
 
@@ -449,8 +449,8 @@
 <p>　　在写applet的时候碰到的第一个小问题是在eclipse的run as菜单里没有找到java applet，后来发现是自己蠢了，拿helloworld举个例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.applet.*;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> <span class="keyword">extends</span> <span class="title">Applet</span> </span>&#123;</div></pre></td></tr></table></figure></p>
 <p>　　只要import了正确的类，并且主类extends了Applet（表明这是个applet）选项就会自动出现。</p>
 <p>　　第二个才是大问题，写完html之后惊讶地发现<strong>浏览器打开后一片空白</strong></p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><h3 id="appletviewer"><a href="#appletviewer" class="headerlink" title="appletviewer"></a>appletviewer</h3><p>　　第一种解决方法最简单，打开命令行，切到html目录，执行appletviewer命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">appletviewer index.html</div></pre></td></tr></table></figure></p>
-<p>　　但是有一个缺点，打开后的大小并非页面大小，还是那个applet的大小，很没有真实感。</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><h3 id="appletviewer（推荐）"><a href="#appletviewer（推荐）" class="headerlink" title="appletviewer（推荐）"></a>appletviewer（推荐）</h3><p>　　第一种解决方法最简单，打开命令行，切到html目录，执行appletviewer命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">appletviewer index.html</div></pre></td></tr></table></figure></p>
+<p>　　但是有一个缺点，打开后的大小并非页面大小，还是那个applet的大小，很没有真实感。在实际使用中如果html放了其他元素似乎是不能完全显示的，如果用了N遍applet的话此工具会单独的打开n个applet，而不是和浏览器一样显示成一排。实际使用中发现似乎无法识别带有空格的目录，建议直接复制到根目录使用。<br>　　但是优点是跨平台（appletviewer工具在jre目录中），并且简单的多的多的多。</p>
 <h3 id="浏览器配置"><a href="#浏览器配置" class="headerlink" title="浏览器配置"></a>浏览器配置</h3><p>　　第二种就是正规的浏览器配置了，首先我在自己电脑上使用的是64位的最新版chrome，而chrome浏览器又是最早不支持NPAPI的，简言之就是不支持java applet，所以打开以后是白屏，连缺省控件都不会给你显示，因为他直接过滤掉了。</p>
 <p>　　于是我就屁颠屁颠去下了个firefox，结果发现……晴天霹雳，firefox 52版本之后也不支持了……（所以到底为什么我还要用applet……）下了老版50版本的firefox之后，发现还是什么也没有……跑去查阅了官方文档，里面说只有32位的才支持（眩晕……），之后我就直接去了firefox portable（懒得装了），下载了50的32位portable版，结果还是白屏。再查阅java的文档，如果要用32位的浏览器，就必须安装32位的jre……</p>
 <p>　　这次安装完之后终于有结果了，出现了缺省控件的字样，但是还是不能运行，会显示“Applications Blocked by Security Settings”的字样，具体的完美解决方案我也没有找到，只能找到一个临时的：运行configure java，security标签页中直接在白名单里edit list，把html的路径添上（就是file:///）打头的目录，最后就可以运行了，每次变更了目录就需要重新添加一遍白名单。</p>
@@ -717,7 +717,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决"><span class="nav-number">2.</span> <span class="nav-text">解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#appletviewer"><span class="nav-number">2.1.</span> <span class="nav-text">appletviewer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器配置"><span class="nav-number">2.2.</span> <span class="nav-text">浏览器配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决"><span class="nav-number">2.</span> <span class="nav-text">解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#appletviewer（推荐）"><span class="nav-number">2.1.</span> <span class="nav-text">appletviewer（推荐）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器配置"><span class="nav-number">2.2.</span> <span class="nav-text">浏览器配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
