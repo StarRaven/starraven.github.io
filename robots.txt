@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /about/
+Allow: /page/
+Allow: /tags/
+
+Disallow: /css/
+Disallow: /icons/
+Disallow: /images/
+Disallow: /js/
+Disallow: /lib/
+Disallow: /memory/
+
+Sitemap: https://starraven.github.io/sitemap.xml
+Sitemap: https://starraven.github.io/baidusitemap.xml
