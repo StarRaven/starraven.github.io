@@ -8,8 +8,23 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sun, 10 Sep 2017 03:46:44 GMT</pubDate>
+    <pubDate>Mon, 18 Sep 2017 03:39:45 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>使html中div垂直居中</title>
+      <link>https://starraven.github.io/2017/09/17/2017-09-17-html-vertical-align/</link>
+      <guid>https://starraven.github.io/2017/09/17/2017-09-17-html-vertical-align/</guid>
+      <pubDate>Mon, 18 Sep 2017 03:32:42 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;　　其实这个问题以前做大项目的时候也遇到过，不过当初查了写了之后就忘了po上博客了。这次做作业又碰到了，又重新查了一遍，干脆就写进博客以免忘记。&lt;/p&gt;
+&lt;p&gt;　　写css的都知道css中有一个vertical : middle的属性可以垂直居中，但是这条属性只对存在valign属性的标签有用，div什么的写了都是白写的。在网上找到了一个非常棒的解决方案，在这里引用一下，核心思想是在外围包一个标签后模拟成table再用垂直居中。并且兼容性不错。&lt;/p&gt;
+      
+      </description>
+      
+      <comments>https://starraven.github.io/2017/09/17/2017-09-17-html-vertical-align/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>使用Java Applet过程中的一些问题</title>

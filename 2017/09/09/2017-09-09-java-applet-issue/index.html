@@ -99,7 +99,7 @@
 <meta property="og:url" content="https://starraven.github.io/2017/09/09/2017-09-09-java-applet-issue/index.html">
 <meta property="og:site_name" content="Raven's Writing Desk">
 <meta property="og:description" content="这一阵子跑到匹大来念书了，忙了一个月也算安定下来了。有闲心重新打理这个博客了，希望有空的时候能补上几篇我整个出国过程的文章，也算可以帮助一些和我一样成绩不怎么好的同学吧。 　　这篇文章的起因主要是因为第一学期选了一门叫Interactive System Design的课，第一个作业是做一个about me的page我就不吐槽了。第二个作业竟然是用java applet来写东西。我第一眼看到这">
-<meta property="og:updated_time" content="2017-09-10T03:46:44.412Z">
+<meta property="og:updated_time" content="2017-09-18T03:31:10.610Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Java Applet过程中的一些问题">
 <meta name="twitter:description" content="这一阵子跑到匹大来念书了，忙了一个月也算安定下来了。有闲心重新打理这个博客了，希望有空的时候能补上几篇我整个出国过程的文章，也算可以帮助一些和我一样成绩不怎么好的同学吧。 　　这篇文章的起因主要是因为第一学期选了一门叫Interactive System Design的课，第一个作业是做一个about me的page我就不吐槽了。第二个作业竟然是用java applet来写东西。我第一眼看到这">
@@ -429,7 +429,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  985
+                  1,220
                 </span>
               
 
@@ -464,6 +464,11 @@
 <p>　　于是我就屁颠屁颠去下了个firefox，结果发现……晴天霹雳，firefox 52版本之后也不支持了……（所以到底为什么我还要用applet……）下了老版50版本的firefox之后，发现还是什么也没有……跑去查阅了官方文档，里面说只有32位的才支持（眩晕……），之后我就直接去了firefox portable（懒得装了），下载了50的32位portable版，结果还是白屏。再查阅java的文档，如果要用32位的浏览器，就必须安装32位的jre……</p>
 <p>　　这次安装完之后终于有结果了，出现了缺省控件的字样，但是还是不能运行，会显示“Applications Blocked by Security Settings”的字样，具体的完美解决方案我也没有找到，只能找到一个临时的：运行configure java，security标签页中直接在白名单里edit list，把html的路径添上（就是file:///）打头的目录，最后就可以运行了，每次变更了目录就需要重新添加一遍白名单。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>　　既然java applet已经淘汰的这么彻底了，还是少用为妙……教授似乎还说了要带运行结果到课堂，我随身带的笔记本又是linux的，还得重新配置一遍，想了想还是放弃吧……</p>
+<h2 id="更新于2017年9月17日"><a href="#更新于2017年9月17日" class="headerlink" title="更新于2017年9月17日"></a>更新于2017年9月17日</h2><p>　　因为这个applet还不是结束……老师要求我们继续写进网页，于是继续探索了一下</p>
+<h3 id="Linux端java配置"><a href="#Linux端java配置" class="headerlink" title="Linux端java配置"></a>Linux端java配置</h3><p>　　和windows大同小异，安装完java之后直接在命令行运行ControlPanel调整白名单即可，但是说到这里有两点要注意的：<br>　　1. 可能是我安装过两个java环境的缘故，sudo ControlPanel设置白名单无效，必须去掉sudo才行。<br>　　2. 似乎是jre1.7（即linux下的jre7）以前的版本可以直接安全级别调成中等，可以尝试。</p>
+<h3 id="javascript和applet通讯"><a href="#javascript和applet通讯" class="headerlink" title="javascript和applet通讯"></a>javascript和applet通讯</h3><p>　　首先applet标签里得有mayscript，如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">applet</span> <span class="attr">code</span>=<span class="string">"ShowShape.class"</span> <span class="attr">id</span>=<span class="string">"myApplet"</span> <span class="attr">width</span>=<span class="string">"300"</span> <span class="attr">height</span>=<span class="string">"150"</span> <span class="attr">mayscript</span>=<span class="string">"mayscript"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>　　然后在js中加入相关代码，就可以访问applet中的函数了<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">testCall</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> applet = <span class="built_in">document</span>.getElementById(<span class="string">"myApplet"</span>);</div><div class="line">  applet.abc(<span class="string">"HaHa"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>　　需要注意的是似乎需要部署到服务器（如Tomcat）才能成功访问到applet中的函数。</p>
 
       
     </div>
@@ -522,6 +527,10 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/17/2017-09-17-html-vertical-align/" rel="next" title="使html中div垂直居中">
+                <i class="fa fa-chevron-left"></i> 使html中div垂直居中
+              </a>
             
           </div>
 
@@ -605,7 +614,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -627,7 +636,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -726,7 +735,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决"><span class="nav-number">2.</span> <span class="nav-text">解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#appletviewer（推荐）"><span class="nav-number">2.1.</span> <span class="nav-text">appletviewer（推荐）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器配置"><span class="nav-number">2.2.</span> <span class="nav-text">浏览器配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决"><span class="nav-number">2.</span> <span class="nav-text">解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#appletviewer（推荐）"><span class="nav-number">2.1.</span> <span class="nav-text">appletviewer（推荐）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器配置"><span class="nav-number">2.2.</span> <span class="nav-text">浏览器配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新于2017年9月17日"><span class="nav-number">4.</span> <span class="nav-text">更新于2017年9月17日</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux端java配置"><span class="nav-number">4.1.</span> <span class="nav-text">Linux端java配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript和applet通讯"><span class="nav-number">4.2.</span> <span class="nav-text">javascript和applet通讯</span></a></li></ol></li></ol></div>
             
 
           </div>
