@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://starraven.github.io/about/index.html</loc>
+    
+    <lastmod>2017-09-22T16:18:35.217Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://starraven.github.io/2017/09/22/2017-09-22-form-validation-prevent-refresh/</loc>
     
     <lastmod>2017-09-22T16:00:06.981Z</lastmod>
@@ -124,13 +131,6 @@
     <loc>https://starraven.github.io/tags/index.html</loc>
     
     <lastmod>2017-04-25T16:26:26.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://starraven.github.io/about/index.html</loc>
-    
-    <lastmod>2017-04-25T16:19:42.000Z</lastmod>
     
   </url>
   
