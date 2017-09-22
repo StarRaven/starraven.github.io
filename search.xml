@@ -3,6 +3,20 @@
   
     
     <entry>
+      <title><![CDATA[保留validation特性同时让form提交时不刷新整个页面]]></title>
+      <url>%2F2017%2F09%2F22%2F2017-09-22-form-validation-prevent-refresh%2F</url>
+      <content type="text"><![CDATA[Interactive System Design的作业总是能让我遇到奇奇怪怪的问题，当然也有可能是因为我没走寻常路，用jsp实现起来应该会方便一些。 在html5中form组件提供了原生的validation，非常好用。但是form必须使用submit方法的控件才能让validation跑起来，如果想在同时阻止submit方法造成的表格甚至整个页面的刷新就需要添上其他的代码。 html代码123456789&lt;form id="myform" target="nm_iframe" onsubmit="submitForm()"&gt; &lt;input id="submit_handle" type="submit" style="display: none"&gt;&lt;/form&gt;&lt;a type="submit" class="button button-circle" onclick="parseForm()"&gt; Generate&lt;/a&gt;&lt;iframe id="id_iframe" name="nm_iframe" style="display:none;"&gt;&lt;/iframe&gt; javascript代码123456function submitForm() &#123;&#125;function parseForm() &#123; $('#submit_handle').click();&#125; 总结 submit_handle部分过渡是为了个人的网站需要，因为想让按钮独立于form外，所以不需要的话html和js的两段过渡可以去掉。 阻止刷新的部分主要用的就是让页面跳转到当前页面一个不显示的iframe，这算是一个trick，但是实现起来最简单。如果想要完整功能的也可以试试e.preventdefault()函数，但是我用了之后不知道怎么让表格在validation通过的情况下执行函数，所以就用这个凑合吧。]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[spacemacs中org2pdf代码块高亮问题]]></title>
+      <url>%2F2017%2F09%2F18%2F2017-09-18-spacemacs-org2pdf-code-highlight%2F</url>
+      <content type="text"><![CDATA[最近好死不死又开始折腾emacs，好不容易跟着子龙山人大大的21天学会emacs视频学了一半emacs快捷键记的差不多了，结果切到spacemacs之后一切从头再来……简直悲剧……暂时还没有体会到vim编辑模式的便捷。所以我现在写html还是用的atom，而且windows配emacs真的是苦不堪言，只能用随身带的air装了个ubuntu强行emacs了。 org2pdf这个东西确实是不错，但是前提是你得懂latex，不懂的话其实我建议还是直接word另存为pdf更方便。这次主要遇到的问题是生成pdf的过程中不会自动把code block自动高亮。 解决方案 首先安装好tex整个组件包（texlive，嫌麻烦就直接装整个套件最容易）然后是pygments，我装的时候python-pygments和python3-pygments都装了一遍（不知道具体哪个生效，反正都装了保险），接着装minted（网上有攻略要装些什么依赖项），如果嫌麻烦的话可以直接：1sudo apt-get install texlive-latex-extra 因为在ubuntu下minted是包含在这个包里的。最后在spacemacs配置文件的user-init中加入如下代码（主旨思想就是让它在从latex转成pdf的时候跑一下-shell-escape的命令）： 12345678(require 'ox-latex)(add-to-list 'org-latex-packages-alist '("""minted"))(setq org-latex-listings 'minted)(setq org-latex-pdf-process '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f" "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f" "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f")) 大功告成！]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[使html中div垂直居中]]></title>
       <url>%2F2017%2F09%2F17%2F2017-09-17-html-vertical-align%2F</url>
       <content type="text"><![CDATA[其实这个问题以前做大项目的时候也遇到过，不过当初查了写了之后就忘了po上博客了。这次做作业又碰到了，又重新查了一遍，干脆就写进博客以免忘记。 写css的都知道css中有一个vertical : middle的属性可以垂直居中，但是这条属性只对存在valign属性的标签有用，div什么的写了都是白写的。在网上找到了一个非常棒的解决方案，在这里引用一下，核心思想是在外围包一个标签后模拟成table再用垂直居中。并且兼容性不错。 html代码1234567&lt;div id="wrap"&gt; &lt;div id="subwrap"&gt; &lt;div id="content"&gt; content &lt;/div&gt; &lt;/div&gt;&lt;/div&gt; css代码12345678910111213141516171819div#wrap &#123; display: table; width: 1000px; height: 1000px; _position: relative; overflow: hidden;&#125;div#subwrap &#123; vertical-align: middle; display: table-cell; _position: absolute; _top: 50%;&#125;div#content &#123; _position: relative; _top: -50%;&#125; 这段代码网上来源太多了……我也不知道应该引用地址写哪里，就空着吧……]]></content>

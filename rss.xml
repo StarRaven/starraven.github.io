@@ -8,8 +8,38 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Mon, 18 Sep 2017 03:39:45 GMT</pubDate>
+    <pubDate>Fri, 22 Sep 2017 16:00:06 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>保留validation特性同时让form提交时不刷新整个页面</title>
+      <link>https://starraven.github.io/2017/09/22/2017-09-22-form-validation-prevent-refresh/</link>
+      <guid>https://starraven.github.io/2017/09/22/2017-09-22-form-validation-prevent-refresh/</guid>
+      <pubDate>Fri, 22 Sep 2017 15:48:53 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;　　Interactive System Design的作业总是能让我遇到奇奇怪怪的问题，当然也有可能是因为我没走寻常路，用jsp实现起来应该会方便一些。&lt;/p&gt;
+&lt;p&gt;　　在html5中form组件提供了原生的validation，非常好用。但是form必须使用submit方法的控件才能让validation跑起来，如果想在同时阻止submit方法造成的表格甚至整个页面的刷新就需要添上其他的代码。&lt;/p&gt;
+      
+      </description>
+      
+      <comments>https://starraven.github.io/2017/09/22/2017-09-22-form-validation-prevent-refresh/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>spacemacs中org2pdf代码块高亮问题</title>
+      <link>https://starraven.github.io/2017/09/18/2017-09-18-spacemacs-org2pdf-code-highlight/</link>
+      <guid>https://starraven.github.io/2017/09/18/2017-09-18-spacemacs-org2pdf-code-highlight/</guid>
+      <pubDate>Mon, 18 Sep 2017 21:43:52 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;　　最近好死不死又开始折腾emacs，好不容易跟着子龙山人大大的21天学会emacs视频学了一半emacs快捷键记的差不多了，结果切到spacemacs之后一切从头再来……简直悲剧……暂时还没有体会到vim编辑模式的便捷。所以我现在写html还是用的atom，而且windows配emacs真的是苦不堪言，只能用随身带的air装了个ubuntu强行emacs了。&lt;/p&gt;
+&lt;p&gt;　　org2pdf这个东西确实是不错，但是前提是你得懂latex，不懂的话其实我建议还是直接word另存为pdf更方便。这次主要遇到的问题是生成pdf的过程中不会自动把code block自动高亮。&lt;/p&gt;
+      
+      </description>
+      
+      <comments>https://starraven.github.io/2017/09/18/2017-09-18-spacemacs-org2pdf-code-highlight/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>使html中div垂直居中</title>

@@ -4,6 +4,50 @@
 
     
   <url>
+    <loc>https://starraven.github.io/2017/09/22/2017-09-22-form-validation-prevent-refresh/</loc>
+    <lastmod>2017-09-22T16:00:06.981Z</lastmod>
+    <data>
+        <display>
+        <title>保留validation特性同时让form提交时不刷新整个页面</title>
+        <pubTime>2017-09-22T15:48:53.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>html</tag>
+         
+         
+           
+             
+              <breadCrumb title="Programming" url="https://starraven.github.io/categories/Programming/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://starraven.github.io/2017/09/18/2017-09-18-spacemacs-org2pdf-code-highlight/</loc>
+    <lastmod>2017-09-22T15:46:30.531Z</lastmod>
+    <data>
+        <display>
+        <title>spacemacs中org2pdf代码块高亮问题</title>
+        <pubTime>2017-09-18T21:43:52.000Z</pubTime>
+        
+        <tag>emacs</tag>
+         
+        <tag>highlight</tag>
+         
+         
+           
+             
+              <breadCrumb title="Programming" url="https://starraven.github.io/categories/Programming/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://starraven.github.io/2017/09/17/2017-09-17-html-vertical-align/</loc>
     <lastmod>2017-09-18T03:39:45.550Z</lastmod>
     <data>
