@@ -8,8 +8,22 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Fri, 22 Sep 2017 16:00:06 GMT</pubDate>
+    <pubDate>Mon, 25 Sep 2017 00:39:04 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>leetcode 004 Median of Two Sorted Arrays解题报告</title>
+      <link>https://starraven.github.io/2017/09/24/2017-09-24-median-of-two-sorted-arrays/</link>
+      <guid>https://starraven.github.io/2017/09/24/2017-09-24-median-of-two-sorted-arrays/</guid>
+      <pubDate>Mon, 25 Sep 2017 00:32:51 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;　　这是一道非常经典的题，题目原型为求第k小的数，中位数只是特殊情况，因此接下来都讨论原题情况。原解应该是这个&lt;a href=&quot;http://blog.csdn.net/zxzxy1988/article/details/8587244&quot;&gt;CSDN1&lt;/a&gt;，我不知道为什么CSDN大神的具体证明都用英语写了，其实我觉得这部分才是最重要的，本来算法就很纠结了，再用英语过一遍更看不懂了。在我彻底看懂写完一遍之后发现了这个链接&lt;a href=&quot;http://blog.csdn.net/yutianzuijin/article/details/11499917/&quot;&gt;CSDN2&lt;/a&gt;，可能写的比我更好一点，如果看我的出现问题了可以看看他的。解题过程如下：&lt;/p&gt;
+      
+      </description>
+      
+      <comments>https://starraven.github.io/2017/09/24/2017-09-24-median-of-two-sorted-arrays/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>保留validation特性同时让form提交时不刷新整个页面</title>
@@ -303,24 +317,6 @@
       </description>
       
       <comments>https://starraven.github.io/2015/02/11/2015-02-11-FF13-tips/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>庆祝本博客正式开张~</title>
-      <link>https://starraven.github.io/2015/02/10/2015-02-10-welcome/</link>
-      <guid>https://starraven.github.io/2015/02/10/2015-02-10-welcome/</guid>
-      <pubDate>Wed, 11 Feb 2015 00:10:45 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;　　于2015年2月10日本博客正式开张&lt;del&gt;(≧▽≦)/&lt;/del&gt;&lt;/p&gt;
-&lt;p&gt;　　现在还只是刚刚fork来的blog，改动不是很多，所以有很多不足之处请多多谅解~&lt;/p&gt;
-&lt;p&gt;　　我会尽快把不完善的地方补足，谢谢大家支持~&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;之前因为我
-      
-      </description>
-      
-      <comments>https://starraven.github.io/2015/02/10/2015-02-10-welcome/#disqus_thread</comments>
     </item>
     
   </channel>
