@@ -8,8 +8,23 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Wed, 17 Jan 2018 03:15:55 GMT</pubDate>
+    <pubDate>Fri, 26 Jan 2018 04:09:46 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>安卓旅行青蛙卡在Now Loading界面解决方案</title>
+      <link>https://starraven.github.io/2018/01/25/2018-01-25-travelling-frog-now-loading/</link>
+      <guid>https://starraven.github.io/2018/01/25/2018-01-25-travelling-frog-now-loading/</guid>
+      <pubDate>Fri, 26 Jan 2018 04:05:06 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;　　今天养青蛙的时候突然发现卡在now loading进不去了，很是着急，去百度了一下所谓的解决方法全都是通篇一律的下载重装重新玩，这怎么可以？！&lt;/p&gt;
+&lt;p&gt;　　还好发现其实并不难解决，安卓版本想要备份存档的话目录在Android-&amp;gt;data-&amp;gt;jp.co.
+      
+      </description>
+      
+      <comments>https://starraven.github.io/2018/01/25/2018-01-25-travelling-frog-now-loading/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>出国留学之匹兹堡大学——学习篇</title>
@@ -300,22 +315,6 @@
       </description>
       
       <comments>https://starraven.github.io/2015/03/12/2015-03-12-canghai/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>碎碎念-20150309</title>
-      <link>https://starraven.github.io/2015/03/09/2015-03-09-diary/</link>
-      <guid>https://starraven.github.io/2015/03/09/2015-03-09-diary/</guid>
-      <pubDate>Tue, 10 Mar 2015 03:10:38 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;　　开学第二周了，之前一直忙这忙那的而且也确实没什么可写的。&lt;/p&gt;
-&lt;p&gt;　　但是想想当初折腾这博客时的艰辛历程【orz　，所以没啥可写的也凑篇碎碎念出来吧。&lt;/p&gt;
-&lt;p&gt;　　这个学期学校的课少了很多，即使我重修了概统和高数还有上个学年没修的体育，课表还是空的很。概统和高数希望我这个学期能好好上吧。。反正作业没得抄看起来还是有点希望的orz。。体育的话这学期终于选到了网球，老师看起来不错，课程目前看来也很是轻松，一上来跑两小圈再做个准备活动就可以一直打到最后了～不知道最后考核怎么样～&lt;/p&gt;
-      
-      </description>
-      
-      <comments>https://starraven.github.io/2015/03/09/2015-03-09-diary/#disqus_thread</comments>
     </item>
     
   </channel>
